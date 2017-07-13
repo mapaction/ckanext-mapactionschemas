@@ -1,0 +1,15 @@
+{
+  "scheming_presets_version": 1,
+  "about": "extra scheming field presets",
+  "about_url": "http://github.com/",
+  "presets": [
+    {
+      "preset_name": "tag_list",
+      "values": {
+        "form_snippet": "select.html",
+        "display_snippet": "select.html",
+        "validators": "ignore_missing scheming_choices"
+      }
+    }
+  ]
+}
