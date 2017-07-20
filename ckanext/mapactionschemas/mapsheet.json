@@ -39,10 +39,6 @@
       "validators": "scheming_required"
     },
     {
-      "field_name": "help",
-      "label": "Help"
-    },
-    {
       "field_name": "language-iso2",
       "label": "Language ISO 2",
       "validators": "scheming_required"
@@ -95,18 +91,6 @@
       "validators": "scheming_required"
     },
     {
-      "field_name": "jpgfilesize",
-      "label": "jpgfilesize"
-    },
-    {
-      "field_name": "jpgresolutiondpi",
-      "label": "jpgresolutiondpi"
-    },
-    {
-      "field_name": "kmlresolutiondpi",
-      "label": "kmlresolutiondpi"
-    },
-    {
       "field_name": "kmzfilename",
       "label": "kmzfilename"
     },
@@ -118,10 +102,6 @@
       "field_name": "mapNumber",
       "label": "mapNumber",
       "validators": "scheming_required"
-    },
-    {
-      "field_name": "mxdfilename",
-      "label": "mxdfilename"
     },
     {
       "field_name": "papersize",
@@ -218,10 +198,6 @@
       "label": "type"
     },
     {
-      "field_name": "syndicate",
-      "label": "syndicate"
-    },
-    {
       "field_name": "data_update_frequency",
       "label": "data_update_frequency"
     },
@@ -232,10 +208,6 @@
     {
       "field_name": "methodology_other",
       "label": "methodology_other"
-    },
-    {
-      "field_name": "number_of_pages",
-      "label": "number_of_pages"
     }
   ],
   "resource_fields": [
