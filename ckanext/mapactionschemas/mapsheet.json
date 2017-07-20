@@ -2,7 +2,7 @@
   "scheming_version": 1,
   "dataset_type": "mapsheet",
   "about": "MapAction MapSheet schema",
-  "about_url": "http://www.aptivate.org/",
+  "about_url": "http://www.mapaction.org/",
   "dataset_fields": [
     {
       "field_name": "title",
