@@ -36,22 +36,22 @@
     {
       "field_name": "country-iso3",
       "label": "Country ISO 3",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "language-iso2",
       "label": "Language ISO 2",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "parentID",
       "label": "parentID",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "prinicpal-country-iso3",
       "label": "Prinicpal country ISO 3",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "access",
@@ -64,17 +64,17 @@
     {
       "field_name": "createdate",
       "label": "createdate",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "createtime",
       "label": "createtime",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "datasource",
       "label": "datasource",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "datum",
@@ -83,12 +83,12 @@
     {
       "field_name": "glideno",
       "label": "glideno",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "jpgfilename",
       "label": "jpgfilename",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "kmzfilename",
@@ -101,7 +101,7 @@
     {
       "field_name": "mapNumber",
       "label": "mapNumber",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "papersize",
@@ -110,7 +110,7 @@
     {
       "field_name": "pdffilename",
       "label": "pdffilename",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "pdffilesize",
@@ -142,34 +142,30 @@
       "label": "sourceorg"
     },
     {
-      "field_name": "summary",
-      "label": "summary",
-      "validators": "scheming_required"
-    },
-    {
       "field_name": "vunerablepeople",
       "label": "vunerablepeople",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "xmax",
       "label": "xmax",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "xmin",
       "label": "xmin",
-      "validators": "scheming_required"
+      "required": true
+
     },
     {
       "field_name": "ymax",
       "label": "ymax",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "ymin",
       "label": "ymin",
-      "validators": "scheming_required"
+      "required": true
     },
     {
       "field_name": "url",
@@ -182,7 +178,8 @@
       "field_name": "version",
       "label": "Version",
       "validators": "ignore_missing unicode package_version_validator",
-      "form_placeholder": "1.0"
+      "form_placeholder": "1.0",
+      "required": true
     },
     {
       "field_name": "product_themes",
