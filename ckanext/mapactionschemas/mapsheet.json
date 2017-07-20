@@ -43,7 +43,7 @@
       "label": "Help"
     },
     {
-      "field_name": "lanaguage-iso2",
+      "field_name": "language-iso2",
       "label": "Language ISO 2",
       "validators": "scheming_required"
     },
