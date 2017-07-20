@@ -2,7 +2,7 @@
   "scheming_version": 1,
   "dataset_type": "mapsheet",
   "about": "MapAction MapSheet schema",
-  "about_url": "",
+  "about_url": "http://www.aptivate.org/",
   "dataset_fields": [
     {
       "field_name": "title",
@@ -34,6 +34,164 @@
       "preset": "dataset_organization"
     },
     {
+      "field_name": "country-iso3",
+      "label": "Country ISO 3",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "help",
+      "label": "Help"
+    },
+    {
+      "field_name": "lanaguage-iso2",
+      "label": "Language ISO 2",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "parentID",
+      "label": "parentID",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "prinicpal-country-iso3",
+      "label": "Prinicpal country ISO 3",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "access",
+      "label": "Access"
+    },
+    {
+      "field_name": "countries",
+      "label": "Countries"
+    },
+    {
+      "field_name": "createdate",
+      "label": "createdate",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "createtime",
+      "label": "createtime",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "datasource",
+      "label": "datasource",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "datum",
+      "label": "datum"
+    },
+    {
+      "field_name": "glideno",
+      "label": "glideno",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "jpgfilename",
+      "label": "jpgfilename",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "jpgfilesize",
+      "label": "jpgfilesize"
+    },
+    {
+      "field_name": "jpgresolutiondpi",
+      "label": "jpgresolutiondpi"
+    },
+    {
+      "field_name": "kmlresolutiondpi",
+      "label": "kmlresolutiondpi"
+    },
+    {
+      "field_name": "kmzfilename",
+      "label": "kmzfilename"
+    },
+    {
+      "field_name": "language",
+      "label": "language"
+    },
+    {
+      "field_name": "mapNumber",
+      "label": "mapNumber",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "mxdfilename",
+      "label": "mxdfilename"
+    },
+    {
+      "field_name": "papersize",
+      "label": "papersize"
+    },
+    {
+      "field_name": "pdffilename",
+      "label": "pdffilename",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "pdffilesize",
+      "label": "pdffilesize"
+    },
+    {
+      "field_name": "pdfresolutiondpi",
+      "label": "pdfresolutiondpi"
+    },
+    {
+      "field_name": "qclevel",
+      "label": "qclevel"
+    },
+    {
+      "field_name": "ref",
+      "label": "ref"
+    },
+    {
+      "field_name": "reliefweb_theme_id_hint",
+      "label": "reliefweb_theme_id_hint",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "scale",
+      "label": "scale"
+    },
+    {
+      "field_name": "sourceorg",
+      "label": "sourceorg"
+    },
+    {
+      "field_name": "summary",
+      "label": "summary",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "vunerablepeople",
+      "label": "vunerablepeople",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "xmax",
+      "label": "xmax",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "xmin",
+      "label": "xmin",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "ymax",
+      "label": "ymax",
+      "validators": "scheming_required"
+    },
+    {
+      "field_name": "ymin",
+      "label": "ymin",
+      "validators": "scheming_required"
+    },
+    {
       "field_name": "url",
       "label": "Source",
       "form_placeholder": "http://example.com/dataset.json",
@@ -49,15 +207,35 @@
     {
       "field_name": "product_themes",
       "label": "Themes",
-      "preset": "tag_list",
+      "preset": "select",
       "form_placeholder": "eg. economy, mental health, government",
       "vocabulary": "product_themes",
-      "choices_helper": "mapactionschemas_vocabulary_choices"
+      "choices_helper": "mapactionschemas_vocabulary_choices",
+      "required": true
     },
     {
-      "field_name": "extras.language",
-      "label": "Language",
-      "validators": "scheming_required"
+      "field_name": "type",
+      "label": "type"
+    },
+    {
+      "field_name": "syndicate",
+      "label": "syndicate"
+    },
+    {
+      "field_name": "data_update_frequency",
+      "label": "data_update_frequency"
+    },
+    {
+      "field_name": "methodology",
+      "label": "methodology"
+    },
+    {
+      "field_name": "methodology_other",
+      "label": "methodology_other"
+    },
+    {
+      "field_name": "number_of_pages",
+      "label": "number_of_pages"
     }
   ],
   "resource_fields": [
@@ -68,8 +246,7 @@
     },
     {
       "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "label": "Name"
     },
     {
       "field_name": "description",
@@ -81,6 +258,10 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "hash",
+      "label": "hash"
     }
   ]
 }
