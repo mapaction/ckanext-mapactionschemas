@@ -191,10 +191,6 @@
       "required": true
     },
     {
-      "field_name": "type",
-      "label": "type"
-    },
-    {
       "field_name": "data_update_frequency",
       "label": "Data update frequency"
     },
