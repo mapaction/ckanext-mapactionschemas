@@ -45,7 +45,7 @@
     },
     {
       "field_name": "parentID",
-      "label": "parentID",
+      "label": "Parent ID",
       "required": true
     },
     {
@@ -63,108 +63,108 @@
     },
     {
       "field_name": "createdate",
-      "label": "createdate",
+      "label": "Create date",
       "required": true
     },
     {
       "field_name": "createtime",
-      "label": "createtime",
+      "label": "Create time",
       "required": true
     },
     {
       "field_name": "datasource",
-      "label": "datasource",
+      "label": "Data source",
       "required": true
     },
     {
       "field_name": "datum",
-      "label": "datum"
+      "label": "Datum"
     },
     {
       "field_name": "glideno",
-      "label": "glideno",
+      "label": "Glide Number",
       "required": true
     },
     {
       "field_name": "jpgfilename",
-      "label": "jpgfilename",
+      "label": "JPG filename",
       "required": true
     },
     {
       "field_name": "kmzfilename",
-      "label": "kmzfilename"
+      "label": "KMZ filename"
     },
     {
       "field_name": "language",
-      "label": "language"
+      "label": "Language"
     },
     {
       "field_name": "mapNumber",
-      "label": "mapNumber",
+      "label": "Map number",
       "required": true
     },
     {
       "field_name": "papersize",
-      "label": "papersize"
+      "label": "Paper size"
     },
     {
       "field_name": "pdffilename",
-      "label": "pdffilename",
+      "label": "PDF file name",
       "required": true
     },
     {
       "field_name": "pdffilesize",
-      "label": "pdffilesize"
+      "label": "PDF file size"
     },
     {
       "field_name": "pdfresolutiondpi",
-      "label": "pdfresolutiondpi"
+      "label": "PDF resolution DPI"
     },
     {
       "field_name": "qclevel",
-      "label": "qclevel"
+      "label": "QC level"
     },
     {
       "field_name": "ref",
-      "label": "ref"
+      "label": "Ref"
     },
     {
       "field_name": "reliefweb_theme_id_hint",
-      "label": "reliefweb_theme_id_hint",
+      "label": "Reliefweb Theme ID hint",
       "validators": "scheming_required"
     },
     {
       "field_name": "scale",
-      "label": "scale"
+      "label": "Scale"
     },
     {
       "field_name": "sourceorg",
-      "label": "sourceorg"
+      "label": "Source Org"
     },
     {
       "field_name": "vunerablepeople",
-      "label": "vunerablepeople",
+      "label": "Vunerable People",
       "required": true
     },
     {
       "field_name": "xmax",
-      "label": "xmax",
+      "label": "X max",
       "required": true
     },
     {
       "field_name": "xmin",
-      "label": "xmin",
+      "label": "X min",
       "required": true
 
     },
     {
       "field_name": "ymax",
-      "label": "ymax",
+      "label": "Y max",
       "required": true
     },
     {
       "field_name": "ymin",
-      "label": "ymin",
+      "label": "Y min",
       "required": true
     },
     {
@@ -196,15 +196,15 @@
     },
     {
       "field_name": "data_update_frequency",
-      "label": "data_update_frequency"
+      "label": "Data update frequency"
     },
     {
       "field_name": "methodology",
-      "label": "methodology"
+      "label": "Methodology"
     },
     {
       "field_name": "methodology_other",
-      "label": "methodology_other"
+      "label": "Methodology other"
     }
   ],
   "resource_fields": [
@@ -230,7 +230,7 @@
     },
     {
       "field_name": "hash",
-      "label": "hash"
+      "label": "Hash"
     }
   ]
 }
