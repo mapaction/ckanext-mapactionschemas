@@ -53,9 +53,9 @@
       "validators": "scheming_required"
     },
     {
-      "field_name": "prinicpal-country-iso3",
-      "label": "Prinicpal country ISO 3",
-      "validators": "scheming_required"
+      "field_name": "principal-country-iso3",
+      "label": "Principal country ISO 3",
+      "required": true
     },
     {
       "field_name": "access",
@@ -165,8 +165,8 @@
       "validators": "scheming_required"
     },
     {
-      "field_name": "vunerablepeople",
-      "label": "vunerablepeople",
+      "field_name": "vulnerablepeople",
+      "label": "Vulnerable People",
       "validators": "scheming_required"
     },
     {
