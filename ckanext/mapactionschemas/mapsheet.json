@@ -49,8 +49,8 @@
       "required": true
     },
     {
-      "field_name": "prinicpal-country-iso3",
-      "label": "Prinicpal country ISO 3",
+      "field_name": "principal-country-iso3",
+      "label": "Principal country ISO 3",
       "required": true
     },
     {
@@ -142,8 +142,8 @@
       "label": "Source Org"
     },
     {
-      "field_name": "vunerablepeople",
-      "label": "Vunerable People",
+      "field_name": "vulnerablepeople",
+      "label": "Vulnerable People",
       "required": true
     },
     {
