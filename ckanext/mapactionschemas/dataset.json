@@ -1,7 +1,7 @@
 {
   "scheming_version": 1,
-  "dataset_type": "fooar",
-  "about": "Legacy MapAction default schema",
+  "dataset_type": "default",
+  "about": "Legacy MapAction default (legacy) schema",
   "about_url": "",
   "dataset_fields": [
     {
