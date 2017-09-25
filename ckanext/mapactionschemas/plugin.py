@@ -1,7 +1,11 @@
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
+import ckan.lib.navl.dictization_functions as df
+
 from ckanapi import LocalCKAN
+
+Invalid = df.Invalid
 
 def scheming_vocabulary_choices(field):
     """
@@ -23,6 +27,7 @@ def scheming_vocabulary_choices(field):
 class MapactionschemasPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.IValidators)
 
     # IConfigurer
 
@@ -39,3 +44,16 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
 
         '''
         return {'mapactionschemas_vocabulary_choices': scheming_vocabulary_choices}
+
+
+    # IValidators
+    def get_validators(self):
+        return {
+            'equals_one': equals_one,
+        }
+
+
+def equals_one(value):
+    if value != 1:
+        raise Invalid('not 1')
+    return value
