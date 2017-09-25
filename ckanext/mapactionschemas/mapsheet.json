@@ -201,6 +201,12 @@
     {
       "field_name": "methodology_other",
       "label": "Methodology other"
+    },
+    {
+      "field_name": "number_of_pages",
+      "label": "Number of pages",
+      "form_placeholder": "1",
+      "validators": "scheming_required int_validator equals_one"
     }
   ],
   "resource_fields": [
@@ -226,7 +232,8 @@
     },
     {
       "field_name": "hash",
-      "label": "Hash"
+      "label": "Hash",
+      "required": true
     }
   ]
 }
