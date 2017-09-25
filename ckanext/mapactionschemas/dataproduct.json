@@ -1,0 +1,203 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataproduct",
+  "about": "MapAction Data Product schema",
+  "about_url": "http://www.mapaction.org/",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "form_placeholder": "eg. A descriptive title"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
+      "field_name": "license_id",
+      "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "country-iso3",
+      "label": "Country ISO 3",
+      "required": true
+    },
+    {
+      "field_name": "language-iso2",
+      "label": "Language ISO 2"
+    },
+    {
+      "field_name": "parentID",
+      "label": "Parent ID",
+      "required": true
+    },
+    {
+      "field_name": "principal-country-iso3",
+      "label": "Principal country ISO 3",
+      "required": true
+    },
+    {
+      "field_name": "access",
+      "label": "Access"
+    },
+    {
+      "field_name": "countries",
+      "label": "Countries"
+    },
+    {
+      "field_name": "createdate",
+      "label": "Create date",
+      "required": true
+    },
+    {
+      "field_name": "createtime",
+      "label": "Create time",
+      "required": true
+    },
+    {
+      "field_name": "datasource",
+      "label": "Data source",
+      "required": true
+    },
+    {
+      "field_name": "datum",
+      "label": "Datum"
+    },
+    {
+      "field_name": "glideno",
+      "label": "Glide Number",
+      "required": true
+    },
+    {
+      "field_name": "language",
+      "label": "Language"
+    },
+    {
+      "field_name": "mapNumber",
+      "label": "Map number",
+      "required": true
+    },
+    {
+      "field_name": "qclevel",
+      "label": "QC level"
+    },
+    {
+      "field_name": "ref",
+      "label": "Ref"
+    },
+    {
+      "field_name": "scale",
+      "label": "Scale"
+    },
+    {
+      "field_name": "sourceorg",
+      "label": "Source Org"
+    },
+    {
+      "field_name": "vulnerablepeople",
+      "label": "Vulnerable People",
+      "required": true
+    },
+    {
+      "field_name": "xmax",
+      "label": "X max"
+    },
+    {
+      "field_name": "xmin",
+      "label": "X min"
+    },
+    {
+      "field_name": "ymax",
+      "label": "Y max"
+    },
+    {
+      "field_name": "ymin",
+      "label": "Y min"
+    },
+    {
+      "field_name": "url",
+      "label": "Source",
+      "form_placeholder": "http://example.com/dataset.json",
+      "display_property": "foaf:homepage",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "version",
+      "label": "Version",
+      "validators": "ignore_missing unicode package_version_validator",
+      "form_placeholder": "1.0",
+      "required": true
+    },
+    {
+      "field_name": "product_themes",
+      "label": "Themes",
+      "preset": "select",
+      "form_placeholder": "eg. economy, mental health, government",
+      "vocabulary": "product_themes",
+      "choices_helper": "mapactionschemas_vocabulary_choices",
+      "required": true
+    },
+    {
+      "field_name": "syndicate",
+      "label": "Syndicate",
+      "required": true
+    },
+    {
+      "field_name": "data_update_frequency",
+      "label": "Data update frequency",
+      "required": true
+    },
+    {
+      "field_name": "methodology",
+      "label": "Methodology",
+      "required": true
+    },
+    {
+      "field_name": "methodology_other",
+      "label": "Methodology other",
+      "required": true
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "name",
+      "label": "Name"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "hash",
+      "label": "Hash"
+    }
+  ]
+}
