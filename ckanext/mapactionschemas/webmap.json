@@ -128,7 +128,7 @@
     },
     {
       "field_name": "pdffilename",
-      "label": "pdffilename",
+      "label": "pdffilename"
     },
     {
       "field_name": "pdffilesize",
