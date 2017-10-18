@@ -51,7 +51,8 @@
             "field_name": "summary", 
             "label": "Summary", 
             "help_text": "Summary or abstract describing the map. This is normally extracted from a text box on the map itself.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "large_text.html"
         }, 
         {
             "field_name": "name", 
@@ -112,7 +113,7 @@
             "label": "Create Date", 
             "help_text": "This is the timestamp that the map/dataset was produced. This may have been in an offline environment. \nThis is the timestamp that will be shown on the map itself.", 
             "required": true, 
-            "form_snippet": "date.html\n"
+            "form_snippet": "date.html"
         }, 
         {
             "field_name": "createtime", 
