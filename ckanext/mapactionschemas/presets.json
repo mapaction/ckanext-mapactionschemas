@@ -8,7 +8,7 @@
       "values": {
         "form_snippet": "select.html",
         "display_snippet": "select.html",
-        "validators": "ignore_missing scheming_choices"
+        "validators": "ignore_missing"
       }
     }
   ]

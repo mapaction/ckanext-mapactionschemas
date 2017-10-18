@@ -15,7 +15,7 @@
             "label": "Url"
         }, 
         {
-            "help_text": "For file type resorces, the SHA256 hash of file", 
+            "help_text": "For file type resources, the SHA256 hash of file", 
             "required": false, 
             "field_name": "hash", 
             "label": "Hash"
@@ -29,7 +29,7 @@
             "label": "Type"
         }, 
         {
-            "help_text": "The Map Number describes a single map product for an emergency.\n* A map product may have multiple versions, each of which will have the same Map Number. To get an identifier for a specific version of a map use the `result.name` field.\n* A Map Number is only unique within an emergency. To get an unique indentifier accross all emergencies use the [proposed] `parentID` field.", 
+            "help_text": "The Map Number describes a single map product for an emergency.\n* A map product may have multiple versions, each of which will have the same Map Number. To get an identifier for a specific version of a map use the `result.name` field.\n* A Map Number is only unique within an emergency. To get an unique identifier across all emergencies use the [proposed] `parentID` field.", 
             "required": true, 
             "field_name": "mapNumber", 
             "label": "Mapnumber"
@@ -71,7 +71,7 @@
             "label": "Url"
         }, 
         {
-            "help_text": "This field can be a comma separated list of glidenos. This is becuase we do not always find that our operational responses match one-to-one with glidenos.", 
+            "help_text": "This field can be a comma separated list of glidenos. This is because we do not always find that our operational responses match one-to-one with glidenos.", 
             "required": true, 
             "field_name": "glideno", 
             "label": "Glideno"
@@ -83,13 +83,13 @@
             "label": "Principal-country-iso3"
         }, 
         {
-            "help_text": "A comma seperated list of ISO3 country codes for all affected countries", 
+            "help_text": "A comma separated list of ISO3 country codes for all affected countries", 
             "required": true, 
             "field_name": "all-countries-iso3", 
             "label": "All-countries-iso3"
         }, 
         {
-            "help_text": "A comma seperated list of country names (in English) to which map or dataproduct applies.\nAt present the control list of this field is here: https://github.com/mapaction/mapaction-toolbox/blob/master/arcgis10_mapping_tools/MapActionToolbars/frmConfigMain.Designer.cs (starting line 285).", 
+            "help_text": "A comma separated list of country names (in English) to which map or dataproduct applies.\nAt present the control list of this field is here: https://github.com/mapaction/mapaction-toolbox/blob/master/arcgis10_mapping_tools/MapActionToolbars/frmConfigMain.Designer.cs (starting line 285).", 
             "required": false, 
             "field_name": "countries", 
             "label": "Countries"
@@ -125,10 +125,10 @@
             "label": "Reliefweb_theme_id_hint"
         }, 
         {
-            "help_text": "Contains the ID of terms used by ReliefWeb to label content according to vulnerable groups such as Aged Persons, Children, IDPs, Persons with Disabilities, Refugees, and Women. See here for futher details https://reliefweb.int/taxonomy-descriptions#groups", 
+            "help_text": "Contains the ID of terms used by ReliefWeb to label content according to vulnerable groups such as Aged Persons, Children, IDPs, Persons with Disabilities, Refugees, and Women. See here for further details https://reliefweb.int/taxonomy-descriptions#groups", 
             "required": false, 
-            "field_name": "vunerablepeople", 
-            "label": "Vunerablepeople"
+            "field_name": "vulnerablepeople", 
+            "label": "Vulnerablepeople"
         }, 
         {
             "help_text": "A list of zero or more humanitarian themes to which the product relates.", 
@@ -137,7 +137,7 @@
             "label": "Product_themes"
         }, 
         {
-            "help_text": "Disasters related to this dataset\nNote that `groups` and `events` are synonimous. Typically a dataset will only be a member of a single group, but this is by convention and not enforced.", 
+            "help_text": "Disasters related to this dataset\nNote that `groups` and `events` are synonymous. Typically a dataset will only be a member of a single group, but this is by convention and not enforced.", 
             "required": false, 
             "field_name": "groups", 
             "label": "Groups"
@@ -185,7 +185,7 @@
             "label": "Scale"
         }, 
         {
-            "help_text": "Describes the indended audience for the product. Possible values:\n* \"Public\"\n* \"MapAction\"\n* \"Selected partners\"\n\nNote that this is not releated to whether or not CKAN makes the dataset available publicly/anomymously or the legal licence for the data. ", 
+            "help_text": "Describes the intended audience for the product. Possible values:\n* \"Public\"\n* \"MapAction\"\n* \"Selected partners\"\n\nNote that this is not related to whether or not CKAN makes the dataset available publicly/anonymously or the legal licence for the data. ", 
             "required": false, 
             "field_name": "access", 
             "label": "Access"
@@ -245,7 +245,7 @@
             "label": "Jpgfilename"
         }, 
         {
-            "help_text": "Size in bytes, of the JPEG file (if it exists). The acuracy of this value is not garenteed. It is known to be incorrect in the case of atlases.", 
+            "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
             "required": false, 
             "field_name": "jpgfilesize", 
             "label": "Jpgfilesize"
@@ -263,7 +263,7 @@
             "label": "Pdffilename"
         }, 
         {
-            "help_text": "Size in bytes, of the PDF file (if it exists). The acuracy of this value is not garenteed. It is known to be incorrect in the case of atlases.", 
+            "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
             "required": false, 
             "field_name": "pdffilesize", 
             "label": "Pdffilesize"
@@ -281,7 +281,7 @@
             "label": "Kmzfilename"
         }, 
         {
-            "help_text": "The DPI used to produce any raster elements with the KMZ file (if one exists). Note that normally KMZ files are produce rather than KMLs desipte the fieldname", 
+            "help_text": "The DPI used to produce any raster elements with the KMZ file (if one exists). Note that normally KMZ files are produced rather than KMLs despite the fieldname", 
             "required": false, 
             "field_name": "kmlresolutiondpi", 
             "label": "Kmlresolutiondpi"
@@ -299,7 +299,7 @@
             "label": "Ref"
         }, 
         {
-            "help_text": "Freetext description of the Quality Control process the map as been subjected to.", 
+            "help_text": "Freetext description of the Quality Control process the map has been subjected to.", 
             "required": false, 
             "field_name": "qclevel", 
             "label": "Qclevel"
