@@ -12,13 +12,13 @@
             "help_text": "URL where the specific resource can be accessed.", 
             "required": false, 
             "field_name": "url", 
-            "label": "Url"
+            "label": "URL"
         }, 
         {
             "help_text": "For file type resources, the SHA256 hash of file", 
             "required": false, 
             "field_name": "hash", 
-            "label": "Hash"
+            "label": "Hash (SHA256)"
         }
     ], 
     "dataset_fields": [
@@ -32,7 +32,7 @@
             "help_text": "The Map Number describes a single map product for an emergency.\n* A map product may have multiple versions, each of which will have the same Map Number. To get an identifier for a specific version of a map use the `result.name` field.\n* A Map Number is only unique within an emergency. To get an unique identifier across all emergencies use the [proposed] `parentID` field.", 
             "required": true, 
             "field_name": "mapNumber", 
-            "label": "Mapnumber"
+            "label": "Map Number"
         }, 
         {
             "help_text": "Title of the map or dataproduct. Single line.", 
@@ -62,31 +62,31 @@
             "help_text": "A description of the datasources used to produce this dataset.", 
             "required": true, 
             "field_name": "datasource", 
-            "label": "Datasource"
+            "label": "Data Source"
         }, 
         {
             "help_text": "URL where the specific resource can be accessed.", 
             "required": false, 
             "field_name": "url", 
-            "label": "Url"
+            "label": "URL"
         }, 
         {
             "help_text": "This field can be a comma separated list of glidenos. This is because we do not always find that our operational responses match one-to-one with glidenos.", 
             "required": true, 
             "field_name": "glideno", 
-            "label": "Glideno"
+            "label": "Glide Number"
         }, 
         {
             "help_text": "The ISO3 country for for the principal disaster affected country", 
             "required": true, 
             "field_name": "principal-country-iso3", 
-            "label": "Principal-country-iso3"
+            "label": "Principal Country (ISO3)"
         }, 
         {
             "help_text": "A comma separated list of ISO3 country codes for all affected countries", 
             "required": true, 
             "field_name": "all-countries-iso3", 
-            "label": "All-countries-iso3"
+            "label": "All Countries (ISO3)"
         }, 
         {
             "help_text": "A comma separated list of country names (in English) to which map or dataproduct applies.\nAt present the control list of this field is here: https://github.com/mapaction/mapaction-toolbox/blob/master/arcgis10_mapping_tools/MapActionToolbars/frmConfigMain.Designer.cs (starting line 285).", 
@@ -98,7 +98,7 @@
             "help_text": "ISO 639-1 two letter code for the lanuage used in the product (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)", 
             "required": false, 
             "field_name": "language-iso2", 
-            "label": "Language-iso2"
+            "label": "Language (ISO2)"
         }, 
         {
             "help_text": "Natural language(s) used within the map or dataproduct ", 
@@ -110,31 +110,31 @@
             "help_text": "This is the timestamp that the map/dataset was produced. This may have been in an offline environment. \nThis is the timestamp that will be shown on the map itself.", 
             "required": true, 
             "field_name": "createdate", 
-            "label": "Createdate"
+            "label": "Create Date"
         }, 
         {
             "help_text": "This is the date and time that the map was produced. Typically it is the date and time that appear in the marginalia of the map itself.", 
             "required": true, 
             "field_name": "createtime", 
-            "label": "Createtime"
+            "label": "Create Time"
         }, 
         {
             "help_text": "The ID of the ReliefWeb theme, which the MapAction field team presume is appropriate for the map. This is provided exclusively for the convenience of the ReliefWeb editorial team. Note that the ReliefWeb editorial team, may choose to override this value, hence it may not reflect the actual value used by ReliefWeb, if and when they republish this map.", 
             "required": false, 
             "field_name": "reliefweb_theme_id_hint", 
-            "label": "Reliefweb_theme_id_hint"
+            "label": "ReliefWeb Theme ID hint"
         }, 
         {
             "help_text": "Contains the ID of terms used by ReliefWeb to label content according to vulnerable groups such as Aged Persons, Children, IDPs, Persons with Disabilities, Refugees, and Women. See here for further details https://reliefweb.int/taxonomy-descriptions#groups", 
             "required": false, 
             "field_name": "vulnerablepeople", 
-            "label": "Vulnerablepeople"
+            "label": "Vulnerable People"
         }, 
         {
             "help_text": "A list of zero or more humanitarian themes to which the product relates.", 
             "required": true, 
             "field_name": "product_themes", 
-            "label": "Product_themes"
+            "label": "Product Themes"
         }, 
         {
             "help_text": "Disasters related to this dataset\nNote that `groups` and `events` are synonymous. Typically a dataset will only be a member of a single group, but this is by convention and not enforced.", 
@@ -152,25 +152,25 @@
             "help_text": "Eastern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "field_name": "xmax", 
-            "label": "Xmax"
+            "label": "X max"
         }, 
         {
             "help_text": "Western edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "field_name": "xmin", 
-            "label": "Xmin"
+            "label": "X min"
         }, 
         {
             "help_text": "Northern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "field_name": "ymax", 
-            "label": "Ymax"
+            "label": "Y max"
         }, 
         {
             "help_text": "Southern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "field_name": "ymin", 
-            "label": "Ymin"
+            "label": "Y min"
         }, 
         {
             "help_text": "The datum used in the map", 
@@ -194,13 +194,13 @@
             "help_text": "The ID of license group under which the map or dataproduct is published. License definitions and additional information can be found at http://opendefinition.org/", 
             "required": true, 
             "field_name": "license_id", 
-            "label": "License_id"
+            "label": "License ID"
         }, 
         {
             "help_text": "The title of license group under which the map or dataproduct is published. License definitions and additional information can be found at http://opendefinition.org/", 
             "required": false, 
             "field_name": "license_title", 
-            "label": "License_title"
+            "label": "License Title"
         }, 
         {
             "help_text": "Indicates whether or not a dataset should be syndicated to HDX", 
@@ -212,7 +212,7 @@
             "help_text": "A verbal description of the expected frequency by which the underlying data is updated.", 
             "required": true, 
             "field_name": "data_update_frequency", 
-            "label": "Data_update_frequency"
+            "label": "Data update frequency"
         }, 
         {
             "help_text": "??", 
@@ -224,73 +224,73 @@
             "help_text": "??", 
             "required": false, 
             "field_name": "methodology_other", 
-            "label": "Methodology_other"
+            "label": "Methodology other"
         }, 
         {
             "help_text": "For multiple page products (eg atlases and powerpoint maps) this indicates the number of pages", 
             "required": false, 
             "field_name": "number_of_pages", 
-            "label": "Number_of_pages"
+            "label": "Number of pages"
         }, 
         {
             "help_text": "The papersize for which the map was optimised.", 
             "required": false, 
             "field_name": "papersize", 
-            "label": "Papersize"
+            "label": "Paper size"
         }, 
         {
             "help_text": "The filename of the first jpeg file (is one exists). Note that `resources.name` where resources.format==\"JPEG\" is more reliable.", 
             "required": false, 
             "field_name": "jpgfilename", 
-            "label": "Jpgfilename"
+            "label": "JPG file name"
         }, 
         {
             "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
             "required": false, 
             "field_name": "jpgfilesize", 
-            "label": "Jpgfilesize"
+            "label": "JPG file size"
         }, 
         {
             "help_text": "The DPI used to produce the jpeg file (if one exists).", 
             "required": false, 
             "field_name": "jpgresolutiondpi", 
-            "label": "Jpgresolutiondpi"
+            "label": "JPG resolution DPI"
         }, 
         {
             "help_text": "The filename of the main PDF file associated with the dataset. ", 
             "required": false, 
             "field_name": "pdffilename", 
-            "label": "Pdffilename"
+            "label": "PDF file name"
         }, 
         {
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
             "required": false, 
             "field_name": "pdffilesize", 
-            "label": "Pdffilesize"
+            "label": "PDF file size"
         }, 
         {
             "help_text": "The DPI used to produce the pdf file (if one exists).", 
             "required": false, 
             "field_name": "pdfresolutiondpi", 
-            "label": "Pdfresolutiondpi"
+            "label": "PDF resolution DPI"
         }, 
         {
             "help_text": "The filename of the first KML file (is one exists). Note that `resources.name` where resources.format==\"KML\" is more reliable.", 
             "required": false, 
             "field_name": "kmzfilename", 
-            "label": "Kmzfilename"
+            "label": "KMZ file name"
         }, 
         {
             "help_text": "The DPI used to produce any raster elements with the KMZ file (if one exists). Note that normally KMZ files are produced rather than KMLs despite the fieldname", 
             "required": false, 
             "field_name": "kmlresolutiondpi", 
-            "label": "Kmlresolutiondpi"
+            "label": "KML resolution DPI"
         }, 
         {
             "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
             "required": false, 
             "field_name": "mxdfilename", 
-            "label": "Mxdfilename"
+            "label": "MXD file name"
         }, 
         {
             "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
@@ -302,13 +302,13 @@
             "help_text": "Freetext description of the Quality Control process the map has been subjected to.", 
             "required": false, 
             "field_name": "qclevel", 
-            "label": "Qclevel"
+            "label": "QC level"
         }, 
         {
             "help_text": "Name of the publishing organisation. This will always return the value \"MapAction\"", 
             "required": false, 
             "field_name": "sourceorg", 
-            "label": "Sourceorg"
+            "label": "Source organization"
         }, 
         {
             "help_text": "An Organization object, describing MapAction.\nNote that unlike most other CKAN instances, there is only ever one organisation object on MapAction's Map and Data Repository.", 
