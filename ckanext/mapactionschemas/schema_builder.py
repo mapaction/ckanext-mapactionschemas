@@ -20,6 +20,9 @@ DISPLAY_FIELDNAME = 'display-fieldname'
 FORM_DISPLAY_ORDER = 'form-display-order'
 DESCRIPTION = 'Description'
 
+# CKAN Scheming specific fields
+FORM_SNIPPET = 'form_snippet'
+
 # Product type validation rule columns
 MAPSHEET = 'mapsheet'
 ATLAS = 'atlas'
@@ -67,6 +70,7 @@ def build_ma_schema():
                     continue
                 rules[product_type][field_name] = {
                     DISPLAY_FIELDNAME: row[DISPLAY_FIELDNAME],
+                    FORM_SNIPPET: row[FORM_SNIPPET],
                     'description': row[DESCRIPTION],
                     'required': True if row[product_type] == 'required' else False,
                     'validators': build_validation_rule(row, product_type),
@@ -165,14 +169,19 @@ def reorder_schema_fields(order, schema):
 
 
 def get_field(field_name, metadata):
-    return OrderedDict({
-      "field_name": field_name,
-      "label": metadata[DISPLAY_FIELDNAME],
-      "help_text": metadata['description'],
-      # "form_placeholder": "",
-      # "validators": "scheming_required int_validator",
-      "required": metadata['required'],
-    })
+    items = [
+      ("field_name", field_name),
+      ("label", metadata[DISPLAY_FIELDNAME]),
+      ("help_text", metadata['description']),
+      # ("form_placeholder", ""),
+      # "(validators", "scheming_required int_validator"),
+      ("required", metadata['required'])
+    ]
+
+    if metadata[FORM_SNIPPET]:
+      items.append((FORM_SNIPPET, metadata[FORM_SNIPPET]))
+
+    return OrderedDict(items)
 
 
 def get_fields(schema_rules):
