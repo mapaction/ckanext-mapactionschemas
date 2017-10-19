@@ -23,22 +23,18 @@
     ], 
     "dataset_fields": [
         {
-            "field_name": "type", 
-            "label": "Type", 
-            "help_text": "A classification of the type of output/product. This can be used to filter products which are syndicated to different sites.\n\nPossible values are:\n`mapsheet` = Single page map - our most common product. These are the ones that could be automatically syndicated to RW)\n`atlas` = [aka collection] (manual syndication to RW)\n`powerpoint-map` = manual syndication to RW?\n`webmap` = In a dataset the resources can point to webmaps hosted elsewhere. These could be automatically syndicated to RW.\n`dataproduct`  (syndicate to HDX and not RW). Using \"dataproduct\" rather than \"datset\" could help avoid confusion with the CKAN meaning of \"dataset\".\n`legacy` = Products with where produced prior to ~June2017, whose metadata might not comply with the updated and more tightly defined schema.", 
-            "required": true
-        }, 
-        {
             "field_name": "mapNumber", 
             "label": "Map Number", 
             "help_text": "The Map Number describes a single map product for an emergency.\n* A map product may have multiple versions, each of which will have the same Map Number. To get an identifier for a specific version of a map use the `result.name` field.\n* A Map Number is only unique within an emergency. To get an unique identifier across all emergencies use the [proposed] `parentID` field.", 
-            "required": true
+            "required": true, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "title", 
             "label": "Title", 
             "help_text": "Title of the map or dataproduct. Single line.", 
-            "required": true
+            "required": true, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "notes", 
@@ -64,7 +60,8 @@
             "field_name": "datasource", 
             "label": "Data Source", 
             "help_text": "A description of the datasources used to produce this dataset.", 
-            "required": true
+            "required": true, 
+            "form_snippet": "large_text.html"
         }, 
         {
             "field_name": "url", 
@@ -144,12 +141,6 @@
             "label": "Groups", 
             "help_text": "Disasters related to this dataset\nNote that `groups` and `events` are synonymous. Typically a dataset will only be a member of a single group, but this is by convention and not enforced.", 
             "required": false
-        }, 
-        {
-            "field_name": "tags", 
-            "label": "Tags", 
-            "help_text": "Not currently used", 
-            "required": true
         }, 
         {
             "field_name": "xmax", 

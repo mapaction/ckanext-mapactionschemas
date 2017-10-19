@@ -21,7 +21,10 @@ FORM_DISPLAY_ORDER = 'form-display-order'
 DESCRIPTION = 'Description'
 
 # CKAN Scheming specific fields
+SCHEMING_EXCLUDE = 'scheming_exclude'
 FORM_SNIPPET = 'form_snippet'
+PRESET = 'preset'
+FORM_PLACEHOLDER = 'form_placeholder'
 
 # Product type validation rule columns
 MAPSHEET = 'mapsheet'
@@ -64,6 +67,10 @@ def build_ma_schema():
     with open(MA_SCHEMA, 'rb') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
+
+            if row[SCHEMING_EXCLUDE] == 'Yes':
+                continue
+
             for product_type in PRODUCT_TYPES:
                 field_name = row[FIELDNAME]
                 if field_name is None or '':
@@ -71,6 +78,8 @@ def build_ma_schema():
                 rules[product_type][field_name] = {
                     DISPLAY_FIELDNAME: row[DISPLAY_FIELDNAME],
                     FORM_SNIPPET: row[FORM_SNIPPET],
+                    PRESET: row[PRESET],
+                    FORM_PLACEHOLDER: row[FORM_PLACEHOLDER],
                     'description': row[DESCRIPTION],
                     'required': True if row[product_type] == 'required' else False,
                     'validators': build_validation_rule(row, product_type),
@@ -83,6 +92,9 @@ def build_order():
     with open(MA_SCHEMA, 'rb') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
+            if row[SCHEMING_EXCLUDE] == 'Yes':
+                continue
+
             if row[FIELDNAME] and row[SCHEMA_NAME_SPACE]:
                 try:
                    order = int(row[FORM_DISPLAY_ORDER])
@@ -168,6 +180,13 @@ def reorder_schema_fields(order, schema):
     return OrderedDict(reordered)
 
 
+def append_if(items, field, value):
+    if value:
+        items.append(
+            (field, value)
+        )
+    return items
+
 def get_field(field_name, metadata):
     items = [
       ("field_name", field_name),
@@ -179,7 +198,10 @@ def get_field(field_name, metadata):
     ]
 
     if metadata[FORM_SNIPPET]:
-      items.append((FORM_SNIPPET, metadata[FORM_SNIPPET]))
+        items.append((FORM_SNIPPET, metadata[FORM_SNIPPET]))
+
+    items = append_if(items, "form_placeholder", metadata[FORM_PLACEHOLDER])
+    items = append_if(items, "preset", metadata[PRESET])
 
     return OrderedDict(items)
 
