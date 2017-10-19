@@ -332,7 +332,8 @@
             "field_name": "owner_org", 
             "label": "Organization", 
             "help_text": "An Organization object, describing MapAction.\nNote that unlike most other CKAN instances, there is only ever one organisation object on MapAction's Map and Data Repository.", 
-            "required": false
+            "required": false, 
+            "preset": "dataset_organization"
         }
     ], 
     "dataset_type": "webmap", 
