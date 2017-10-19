@@ -6,19 +6,15 @@
             "field_name": "name", 
             "label": "Name", 
             "help_text": "Link to CKAN docs to follow", 
-            "required": true
+            "required": true, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "url", 
             "label": "URL", 
             "help_text": "URL where the specific resource can be accessed.", 
-            "required": false
-        }, 
-        {
-            "field_name": "hash", 
-            "label": "Hash (SHA256)", 
-            "help_text": "For file type resources, the SHA256 hash of file", 
-            "required": false
+            "required": false, 
+            "form_snippet": "slug.html"
         }
     ], 
     "dataset_fields": [
@@ -54,7 +50,8 @@
             "field_name": "name", 
             "label": "Name", 
             "help_text": "Link to CKAN docs to follow", 
-            "required": true
+            "required": true, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "datasource", 
@@ -67,7 +64,8 @@
             "field_name": "url", 
             "label": "URL", 
             "help_text": "URL where the specific resource can be accessed.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "slug.html"
         }, 
         {
             "field_name": "glideno", 
@@ -143,15 +141,7 @@
             "field_name": "product_themes", 
             "label": "Product Themes", 
             "help_text": "A list of zero or more humanitarian themes to which the product relates.", 
-            "required": true, 
-            "form_snippet": "??"
-        }, 
-        {
-            "field_name": "groups", 
-            "label": "Groups", 
-            "help_text": "Disasters related to this dataset\nNote that `groups` and `events` are synonymous. Typically a dataset will only be a member of a single group, but this is by convention and not enforced.", 
-            "required": false, 
-            "form_snippet": "None"
+            "required": true
         }, 
         {
             "field_name": "xmax", 
@@ -159,7 +149,7 @@
             "help_text": "Eastern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "form_snippet": "text.html", 
-            "preset": "180"
+            "preset": "xmax"
         }, 
         {
             "field_name": "xmin", 
@@ -167,7 +157,7 @@
             "help_text": "Western edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "form_snippet": "text.html", 
-            "preset": "-180"
+            "preset": "xmin"
         }, 
         {
             "field_name": "ymax", 
@@ -175,7 +165,7 @@
             "help_text": "Northern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "form_snippet": "text.html", 
-            "preset": "90"
+            "preset": "ymax"
         }, 
         {
             "field_name": "ymin", 
@@ -183,7 +173,7 @@
             "help_text": "Southern edge of bounding box for the dataset, Given in Decimal Degrees, WGS1984. Used for GeoRSS <georss:box> element", 
             "required": false, 
             "form_snippet": "text.html", 
-            "preset": "-90"
+            "preset": "ymin"
         }, 
         {
             "field_name": "datum", 
@@ -214,126 +204,117 @@
             "form_snippet": "license.html"
         }, 
         {
-            "field_name": "license_title", 
-            "label": "License Title", 
-            "help_text": "The title of license group under which the map or dataproduct is published. License definitions and additional information can be found at http://opendefinition.org/", 
-            "required": false, 
-            "form_snippet": "None"
-        }, 
-        {
             "field_name": "syndicate", 
             "label": "Syndicate", 
             "help_text": "Indicates whether or not a dataset should be syndicated to HDX", 
-            "required": false
+            "required": false, 
+            "form_snippet": "select.html", 
+            "preset": "syndicate"
         }, 
         {
             "field_name": "data_update_frequency", 
             "label": "Data update frequency", 
             "help_text": "A verbal description of the expected frequency by which the underlying data is updated.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "methodology", 
             "label": "Methodology", 
             "help_text": "??", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "methodology_other", 
             "label": "Methodology other", 
             "help_text": "??", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "number_of_pages", 
             "label": "Number of pages", 
             "help_text": "For multiple page products (eg atlases and powerpoint maps) this indicates the number of pages", 
-            "required": true
+            "required": true, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "papersize", 
             "label": "Paper size", 
             "help_text": "The papersize for which the map was optimised.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "jpgfilename", 
             "label": "JPG file name", 
             "help_text": "The filename of the first jpeg file (is one exists). Note that `resources.name` where resources.format==\"JPEG\" is more reliable.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "jpgfilesize", 
             "label": "JPG file size", 
             "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "jpgresolutiondpi", 
             "label": "JPG resolution DPI", 
             "help_text": "The DPI used to produce the jpeg file (if one exists).", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "pdffilename", 
             "label": "PDF file name", 
             "help_text": "The filename of the main PDF file associated with the dataset. ", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "pdffilesize", 
             "label": "PDF file size", 
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "pdfresolutiondpi", 
             "label": "PDF resolution DPI", 
             "help_text": "The DPI used to produce the pdf file (if one exists).", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "kmzfilename", 
             "label": "KMZ file name", 
             "help_text": "The filename of the first KML file (is one exists). Note that `resources.name` where resources.format==\"KML\" is more reliable.", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "kmlresolutiondpi", 
             "label": "KML resolution DPI", 
             "help_text": "The DPI used to produce any raster elements with the KMZ file (if one exists). Note that normally KMZ files are produced rather than KMLs despite the fieldname", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "mxdfilename", 
             "label": "MXD file name", 
             "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
-            "required": false
-        }, 
-        {
-            "field_name": "ref", 
-            "label": "Ref", 
-            "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
-            "required": false
+            "required": false, 
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "qclevel", 
             "label": "QC level", 
             "help_text": "Freetext description of the Quality Control process the map has been subjected to.", 
-            "required": false
-        }, 
-        {
-            "field_name": "sourceorg", 
-            "label": "Source organization", 
-            "help_text": "Name of the publishing organisation. This will always return the value \"MapAction\"", 
-            "required": false
-        }, 
-        {
-            "field_name": "owner_org", 
-            "label": "Organization", 
-            "help_text": "An Organization object, describing MapAction.\nNote that unlike most other CKAN instances, there is only ever one organisation object on MapAction's Map and Data Repository.", 
             "required": false, 
-            "preset": "dataset_organization"
+            "form_snippet": "text.html"
         }
     ], 
     "dataset_type": "atlas", 

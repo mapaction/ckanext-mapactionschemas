@@ -10,6 +10,48 @@
         "display_snippet": "select.html",
         "validators": "ignore_missing"
       }
+    },
+    {
+      "preset_name": "syndicate",
+      "values": {
+        "form_snippet": "select.html",
+        "display_snippet": "select.html",
+        "validators": "scheming_required scheming_choices",
+        "choices": [
+            {
+                "label": "Yes",
+                "value": "true"
+            },
+            {
+                "label": "No",
+                "value": "false"
+            }
+        ]
+      }
+    },
+    {
+      "preset_name": "xmax",
+      "values": {
+        "validators": "valid_float xmax"
+      }
+    },
+    {
+      "preset_name": "xmin",
+      "values": {
+        "validators": "valid_float xmin"
+      }
+    },
+    {
+      "preset_name": "ymax",
+      "values": {
+        "validators": "valid_float ymax"
+      }
+    },
+    {
+      "preset_name": "ymin",
+      "values": {
+        "validators": "valid_float ymin"
+      }
     }
   ]
 }
