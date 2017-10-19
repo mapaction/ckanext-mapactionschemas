@@ -21,7 +21,6 @@ FORM_DISPLAY_ORDER = 'form-display-order'
 DESCRIPTION = 'Description'
 
 # CKAN Scheming specific fields
-SCHEMING_EXCLUDE = 'scheming_exclude'
 FORM_SNIPPET = 'form_snippet'
 PRESET = 'preset'
 FORM_PLACEHOLDER = 'form_placeholder'
@@ -45,6 +44,7 @@ NULLABLE = lambda x: x
 ABSENT = lambda x: x
 NO_RULE = None
 
+OUTPUT_ONLY = 'output-only'
 VALIDATE_CONDITIONS = {
     'required': REQUIRED,
     'nullable': NULLABLE,
@@ -68,20 +68,24 @@ def build_ma_schema():
         reader = csv.DictReader(csvfile)
         for row in reader:
 
-            if row[SCHEMING_EXCLUDE] == 'Yes':
-                continue
-
             for product_type in PRODUCT_TYPES:
                 field_name = row[FIELDNAME]
+
                 if field_name is None or '':
                     continue
-                rules[product_type][field_name] = {
+
+                ns = row[SCHEMA_NAME_SPACE]
+                if ns not in rules[product_type]:
+                    rules[product_type][ns] = defaultdict(dict)
+
+                rules[product_type][ns][field_name] = {
                     DISPLAY_FIELDNAME: row[DISPLAY_FIELDNAME],
                     FORM_SNIPPET: row[FORM_SNIPPET],
                     PRESET: row[PRESET],
                     FORM_PLACEHOLDER: row[FORM_PLACEHOLDER],
                     'description': row[DESCRIPTION],
                     'required': True if row[product_type] == 'required' else False,
+                    'condition': row[product_type],
                     'validators': build_validation_rule(row, product_type),
                 }
     return rules
@@ -92,9 +96,6 @@ def build_order():
     with open(MA_SCHEMA, 'rb') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            if row[SCHEMING_EXCLUDE] == 'Yes':
-                continue
-
             if row[FIELDNAME] and row[SCHEMA_NAME_SPACE]:
                 try:
                    order = int(row[FORM_DISPLAY_ORDER])
@@ -209,6 +210,8 @@ def get_field(field_name, metadata):
 def get_fields(schema_rules):
     fields = []
     for field_name, metadata in schema_rules.items():
+        if metadata['condition'] == OUTPUT_ONLY:
+            continue
         fields.append(get_field(field_name, metadata))
     return fields
 
@@ -219,8 +222,8 @@ def write_schema(dataset_type, schema_file, schema_rules, order_rules):
         "dataset_type": dataset_type,
         "about": "MapAction %s schema" % dataset_type.capitalize(),
         "about_url": "http://www.mapaction.org/",
-        "dataset_fields": get_fields(reorder_schema_fields(order_rules['dataset'], schema_rules)),
-        "resource_fields": get_fields(reorder_schema_fields(order_rules['resources'], schema_rules))
+        "dataset_fields": get_fields(reorder_schema_fields(order_rules['dataset'], schema_rules['dataset'])),
+        "resource_fields": get_fields(reorder_schema_fields(order_rules['resources'], schema_rules['resources']))
     })
 
     with open(schema_file, 'wb') as schema_file:

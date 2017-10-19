@@ -15,9 +15,21 @@
             "help_text": "URL where the specific resource can be accessed.", 
             "required": false, 
             "form_snippet": "slug.html"
+        }, 
+        {
+            "field_name": "hash", 
+            "label": "Hash (SHA256)", 
+            "help_text": "For file type resources, the SHA256 hash of file", 
+            "required": false
         }
     ], 
     "dataset_fields": [
+        {
+            "field_name": "type", 
+            "label": "Type", 
+            "help_text": "A classification of the type of output/product. This can be used to filter products which are syndicated to different sites.\n\nPossible values are:\n`mapsheet` = Single page map - our most common product. These are the ones that could be automatically syndicated to RW)\n`atlas` = [aka collection] (manual syndication to RW)\n`powerpoint-map` = manual syndication to RW?\n`webmap` = In a dataset the resources can point to webmaps hosted elsewhere. These could be automatically syndicated to RW.\n`dataproduct`  (syndicate to HDX and not RW). Using \"dataproduct\" rather than \"datset\" could help avoid confusion with the CKAN meaning of \"dataset\".\n`legacy` = Products with where produced prior to ~June2017, whose metadata might not comply with the updated and more tightly defined schema.", 
+            "required": true
+        }, 
         {
             "field_name": "mapNumber", 
             "label": "Map Number", 
@@ -37,35 +49,29 @@
             "label": "Notes", 
             "help_text": "Summary or abstract describing the map. This is normally extracted from a text box on the map itself.", 
             "required": false, 
-            "form_snippet": "large_text.html"
+            "form_snippet": "markdown.html"
         }, 
         {
             "field_name": "summary", 
             "label": "Summary", 
             "help_text": "Summary or abstract describing the map. This is normally extracted from a text box on the map itself.", 
             "required": false, 
-            "form_snippet": "large_text.html"
+            "form_snippet": "markdown.html"
         }, 
         {
             "field_name": "name", 
             "label": "Name", 
-            "help_text": "Link to CKAN docs to follow", 
+            "help_text": "The version specific productID. \n\nThis version of the product can be access via the Web UI as:\nhttps://maps.mapaction.org/dataset/<productID>\nand via the API as:\nhttps://maps.mapaction.org/api/3/action/package_show?id=<productID>", 
             "required": true, 
-            "form_snippet": "text.html"
+            "form_snippet": "slug.html", 
+            "preset": "dataset_slug"
         }, 
         {
             "field_name": "datasource", 
             "label": "Data Source", 
             "help_text": "A description of the datasources used to produce this dataset.", 
             "required": true, 
-            "form_snippet": "large_text.html"
-        }, 
-        {
-            "field_name": "url", 
-            "label": "URL", 
-            "help_text": "URL where the specific resource can be accessed.", 
-            "required": false, 
-            "form_snippet": "slug.html"
+            "form_snippet": "markdown.html"
         }, 
         {
             "field_name": "glideno", 
@@ -141,7 +147,8 @@
             "field_name": "product_themes", 
             "label": "Product Themes", 
             "help_text": "A list of zero or more humanitarian themes to which the product relates.", 
-            "required": true
+            "required": true, 
+            "preset": "product_themes"
         }, 
         {
             "field_name": "xmax", 
@@ -308,6 +315,12 @@
             "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
             "required": false, 
             "form_snippet": "text.html"
+        }, 
+        {
+            "field_name": "ref", 
+            "label": "Ref", 
+            "help_text": "The filename base (ie minus it's extension) of the map's source .mxd file (presuming it was produced in ArcGIS)", 
+            "required": false
         }, 
         {
             "field_name": "qclevel", 

@@ -30,6 +30,18 @@
       }
     },
     {
+      "preset_name": "product_themes",
+      "values": {
+        "form_snippet": "select.html",
+        "form_placeholder": "eg. economy, mental health, government",
+        "display_snippet": "select.html",
+        "validators": "scheming_required scheming_choices",
+        "vocabulary": "product_themes",
+        "choices_helper": "mapactionschemas_vocabulary_choices",
+        "required": true
+      }
+    },
+    {
       "preset_name": "xmax",
       "values": {
         "validators": "valid_float xmax"
