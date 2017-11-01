@@ -1,0 +1,39 @@
+<a class="btn btn-primary" href="/dataset/new"
+   href="#embed-add_package_typed"
+   data-module="add_package_typed"
+   ><i class="icon-plus-sign-alt"></i> Add Dataset</a>
+
+<div id="embed-add_package_typed" class="modal add_package_typed hide">
+    <form method="post" action="{{ action }}" class="form-horizontal text-center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">{{ _("Add Dataset") }}</h3>
+      </div>
+      <div class="modal-body">
+            <div class="control-group">
+                <label for="field-private" class="control-label">{{ _('Dataset Type') }}</label>
+                <div class="controls">
+                    <select name="package_type">
+            {%- set schemas = h.scheming_dataset_schemas(False) -%}
+            {%- for type, schema in schemas.items() -%}
+                        <option value="{{ type }}">{{ schema['about'] }}</option>
+            {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div><!-- /.modal-body -->
+        <div class="modal-footer">
+            <button class="btn btn-primary pull-left" name="add_package_typed" type="submit">
+              <i class="icon-plus-sign-alt"></i> {{ _('Add Dataset') }}
+            </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div><!-- /.modal-footer -->
+    </form>
+</div>
+
+{#
+{% block scripts %}
+    {{ super() }}
+    {% resource 'mapactiontheme/show-hide.js' %}
+{% endblock scripts %}
+#}
