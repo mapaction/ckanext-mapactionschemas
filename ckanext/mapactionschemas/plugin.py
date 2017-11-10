@@ -1,29 +1,32 @@
 # -*- coding: utf-8 -*-
 
+import pylons.config as config
+
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
 import ckan.lib.navl.dictization_functions as df
 
-from ckanapi import LocalCKAN
+
+from ckanext.mapactionschemas import helpers
 
 Invalid = df.Invalid
 
-def scheming_vocabulary_choices(field):
-    """
-    Required scheming field:
-    "vocabulary": "name or id"
 
-    # https://github.com/SNStatComp/ckan-CC/
-    # /containers/plugins/ckanext-scheming/ckanext-scheming/ckanext/scheming/helpers.py
-    """
-    try:
-        lc = LocalCKAN(username='')
-        vocab = lc.action.vocabulary_show(id=field['vocabulary'])
-        result = [{'value': tag['name'], 'label': tag['name']} for tag in vocab['tags']]
-        return  [{'value': 'notSpecified', 'label': 'not specified'}] + result
-    except:
-        return []
+def group_name():
+    '''Allows renaming of "Group"
+
+    To change this setting add to the
+    [app:main] section of your CKAN config file::
+
+      ckan.mapactiontheme.group_name = MyGroupName
+
+    Returns ``Group`` by default, if the setting is not in the config file.
+
+    :rtype: boolean
+    '''
+    value = config.get('ckan.mapactiontheme.group_name', 'Group')
+    return value
 
 
 class MapactionschemasPlugin(plugins.SingletonPlugin):
@@ -38,15 +41,16 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'mapactionschemas')
 
-
     def get_helpers(self):
         '''Return the CKAN 2.0 template helper functions this plugin provides.
 
         See ITemplateHelpers.
 
         '''
-        return {'mapactionschemas_vocabulary_choices': scheming_vocabulary_choices}
-
+        return {
+            'mapactionschemas_vocabulary_choices': helpers.scheming_vocabulary_choices,
+            'get_display_timezone': helpers.get_display_timezone,
+        }
 
     # IValidators
     def get_validators(self):

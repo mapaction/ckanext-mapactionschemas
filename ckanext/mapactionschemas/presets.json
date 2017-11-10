@@ -32,13 +32,15 @@
     {
       "preset_name": "product_themes",
       "values": {
-        "form_snippet": "select.html",
+        "form_snippet": "multiple_select.html",
         "form_placeholder": "eg. economy, mental health, government",
-        "display_snippet": "select.html",
-        "validators": "scheming_required scheming_choices",
+        "display_snippet": "text.html",
+        "validators": "scheming_required scheming_multiple_choice",
+        "output_validators": "scheming_multiple_choice_output",
         "vocabulary": "product_themes",
         "choices_helper": "mapactionschemas_vocabulary_choices",
         "required": true
+
       }
     },
     {
