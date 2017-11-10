@@ -14,7 +14,7 @@
             "label": "URL", 
             "help_text": "URL where the specific resource can be accessed.", 
             "required": false, 
-            "form_snippet": "slug.html"
+            "preset": "resource_url_upload"
         }
     ], 
     "dataset_fields": [
