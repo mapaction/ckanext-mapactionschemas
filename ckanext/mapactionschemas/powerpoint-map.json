@@ -112,16 +112,17 @@
         {
             "field_name": "createdate", 
             "label": "Create Date", 
-            "help_text": "This is the timestamp that the map/dataset was produced. This may have been in an offline environment. \nThis is the timestamp that will be shown on the map itself.", 
+            "help_text": "This is the timestamp that the map/dataset was produced. This may have been in an offline environment. \nThis is the timestamp that will be shown on the map itself. ISO 8601 timestamp.", 
             "required": true, 
-            "form_snippet": "date.html"
+            "form_snippet": "datetime_tz.html", 
+            "preset": "datetime_tz"
         }, 
         {
             "field_name": "createtime", 
             "label": "Create Time", 
             "help_text": "This is the date and time that the map was produced. Typically it is the date and time that appear in the marginalia of the map itself.", 
             "required": true, 
-            "form_snippet": "datetime.html"
+            "form_snippet": "text.html"
         }, 
         {
             "field_name": "reliefweb_theme_id_hint", 
@@ -322,6 +323,13 @@
             "help_text": "Freetext description of the Quality Control process the map has been subjected to.", 
             "required": false, 
             "form_snippet": "text.html"
+        }, 
+        {
+            "field_name": "owner_org", 
+            "label": "Organization", 
+            "help_text": "An Organization object, describing MapAction.\nNote that unlike most other CKAN instances, there is only ever one organisation object on MapAction's Map and Data Repository.", 
+            "required": true, 
+            "preset": "dataset_organization"
         }
     ], 
     "dataset_type": "powerpoint-map", 
