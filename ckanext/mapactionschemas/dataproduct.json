@@ -89,13 +89,6 @@
             "form_snippet": "text.html"
         },
         {
-            "field_name": "countries",
-            "label": "Countries",
-            "help_text": "A comma separated list of country names (in English) to which map or dataproduct applies.\nAt present the control list of this field is here: https://github.com/mapaction/mapaction-toolbox/blob/master/arcgis10_mapping_tools/MapActionToolbars/frmConfigMain.Designer.cs (starting line 285).",
-            "required": false,
-            "form_snippet": "text.html"
-        },
-        {
             "field_name": "language-iso2",
             "label": "Language (ISO2)",
             "help_text": "ISO 639-1 two letter code for the lanuage used in the product (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)",
