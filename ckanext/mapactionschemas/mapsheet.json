@@ -71,23 +71,17 @@
         {
             "field_name": "principal-country-iso3",
             "label": "Principal Country (ISO3)",
-            "help_text": "The ISO3 country for for the principal disaster affected country",
+            "help_text": "The ISO3 country for the principal disaster affected country",
             "required": true,
             "form_snippet": "text.html"
         },
         {
-            "field_name": "all-countries-iso3",
-            "label": "All Countries (ISO3)",
-            "help_text": "A comma separated list of ISO3 country codes for all affected countries",
-            "required": true,
-            "form_snippet": "text.html"
-        },
-        {
-            "field_name": "countries",
-            "label": "Countries",
-            "help_text": "A comma separated list of country names (in English) to which map or dataproduct applies.\nAt present the control list of this field is here: https://github.com/mapaction/mapaction-toolbox/blob/master/arcgis10_mapping_tools/MapActionToolbars/frmConfigMain.Designer.cs (starting line 285).",
+            "field_name": "country-iso3",
+            "preset": "repeating_text",
+            "label": "Country (ISO3)",
+            "help_text": "The ISO3 country code for an additional affected country",
             "required": false,
-            "form_snippet": "text.html"
+            "form_blanks": 3
         },
         {
             "field_name": "language-iso2",
