@@ -82,11 +82,12 @@
             "form_snippet": "text.html"
         },
         {
-            "field_name": "all-countries-iso3",
-            "label": "All Countries (ISO3)",
-            "help_text": "A comma separated list of ISO3 country codes for all affected countries",
-            "required": true,
-            "form_snippet": "text.html"
+            "field_name": "country-iso3",
+            "preset": "repeating_text",
+            "label": "Country (ISO3)",
+            "help_text": "The ISO3 country code for an additional affected country",
+            "required": false,
+            "form_blanks": 3
         },
         {
             "field_name": "language-iso2",
