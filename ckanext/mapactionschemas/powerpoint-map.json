@@ -212,7 +212,7 @@
             "label": "Data update frequency",
             "help_text": "A verbal description of the expected frequency by which the underlying data is updated.",
             "required": false,
-            "form_snippet": "text.html"
+            "preset": "data_update_frequency"
         },
         {
             "field_name": "methodology",

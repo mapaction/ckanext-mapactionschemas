@@ -30,6 +30,48 @@
       }
     },
     {
+      "preset_name": "data_update_frequency",
+      "values": {
+        "form_snippet": "select.html",
+        "display_snippet": "select.html",
+        "validators": "scheming_required scheming_choices",
+        "choices": [
+          {
+            "value": "Never",
+            "label": "Never"
+          },
+          {
+            "value": "Every day",
+            "label": "Every day"
+          },
+          {
+            "value": "Every week",
+            "label": "Every week"
+          },
+          {
+            "value": "Every two weeks",
+            "label": "Every two weeks"
+          },
+          {
+            "value": "Every month",
+            "label": "Every month"
+          },
+          {
+            "value": "Every three months",
+            "label": "Every three months"
+          },
+          {
+            "value": "Every six months",
+            "label": "Every six months"
+          },
+          {
+            "value": "Every year",
+            "label": "Every year"
+          }
+        ]
+      }
+    },
+    {
       "preset_name": "product_themes",
       "values": {
         "form_snippet": "multiple_select.html",
