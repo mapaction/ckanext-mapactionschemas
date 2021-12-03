@@ -10,6 +10,7 @@ import ckan.lib.navl.dictization_functions as df
 
 from ckanext.mapactionschemas import helpers
 from ckanext.mapactionschemas.constants.aplha_3_country_codes import ISO3_CODES
+from ckanext.mapactionschemas.constants.iso_639_1 import LANGUAGES_ISO2
 
 Invalid = df.Invalid
 
@@ -62,7 +63,8 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
             'xmin': xmin,
             'ymax': ymax,
             'ymin': ymin,
-            'country_iso3': country_iso3
+            'country_iso3': country_iso3,
+            'language_iso2': language_iso2
         }
 
 
@@ -121,3 +123,8 @@ def country_iso3(value):
     if value in ISO3_CODES:
         return value
     raise Invalid(u'Country code has to be ISO3')
+
+def language_iso2(value):
+    if value.lower() in LANGUAGES_ISO2:
+        return value
+    raise Invalid(u'Language code has to be ISO639-1')

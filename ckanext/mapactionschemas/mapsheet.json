@@ -89,6 +89,7 @@
             "label": "Language (ISO2)",
             "help_text": "ISO 639-1 two letter code for the lanuage used in the product (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)",
             "required": true,
+            "validators": "language_iso2",
             "form_snippet": "text.html"
         },
         {
