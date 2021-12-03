@@ -79,6 +79,7 @@
             "label": "Principal Country (ISO3)",
             "help_text": "The ISO3 country for the principal disaster affected country",
             "required": true,
+            "validators": "country_iso3",
             "form_snippet": "text.html"
         },
         {

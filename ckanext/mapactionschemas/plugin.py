@@ -9,6 +9,7 @@ import ckan.lib.navl.dictization_functions as df
 
 
 from ckanext.mapactionschemas import helpers
+from ckanext.mapactionschemas.constants.aplha_3_country_codes import ISO3_CODES
 
 Invalid = df.Invalid
 
@@ -61,6 +62,7 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
             'xmin': xmin,
             'ymax': ymax,
             'ymin': ymin,
+            'country_iso3': country_iso3
         }
 
 
@@ -75,7 +77,7 @@ def valid_float(value):
     try:
         float_value = float(value)
     except ValueError:
-        print "Invalid float '%s'" % value
+        raise Invalid("Invalid float '%s'" % value)
     return float_value
 
 def xmax(key, flattened_data, errors, context):
@@ -114,3 +116,8 @@ def ymin(key, flattened_data, errors, context):
     if -90 <= value <= ymax:
         return value
     raise Invalid(u'-90 ≤ %s ≤ %s' % (value, ymax))
+
+def country_iso3(value):
+    if value in ISO3_CODES:
+        return value
+    raise Invalid(u'Country code has to be ISO3')
