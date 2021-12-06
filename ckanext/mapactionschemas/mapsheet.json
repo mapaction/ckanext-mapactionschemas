@@ -71,7 +71,7 @@
         },
         {
             "field_name": "country-iso3",
-            "preset": "repeating_text",
+            "preset": "contry_iso3",
             "label": "Country (ISO3)",
             "help_text": "The ISO3 country code for an additional affected country",
             "required": false,

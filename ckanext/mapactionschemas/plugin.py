@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 
 import pylons.config as config
 
@@ -69,6 +70,7 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
             'ymax': ymax,
             'ymin': ymin,
             'country_iso3': country_iso3,
+            'country_iso3_list': country_iso3_list,
             'language_iso2': language_iso2,
             'scheming_required_modified': scheming_required_modified
         }
@@ -129,6 +131,15 @@ def country_iso3(value):
     if value in ISO3_CODES:
         return value
     raise Invalid(u'Country code has to be ISO3')
+
+
+def country_iso3_list(data):
+    values = json.loads(data)
+    for value in values:
+        if value not in ISO3_CODES:
+            raise Invalid(u'Country code has to be ISO3')
+    return json.dumps(values)
+
 
 def language_iso2(value):
     if value.lower() in LANGUAGES_ISO2:

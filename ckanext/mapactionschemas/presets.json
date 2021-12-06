@@ -108,6 +108,15 @@
       "values": {
         "validators": "scheming_required_modified valid_float ymin"
       }
+    },
+    {
+      "preset_name": "contry_iso3",
+      "values": {
+        "form_snippet": "repeating_text.html",
+        "display_snippet": "repeating_text.html",
+        "validators": "repeating_text country_iso3_list",
+        "output_validators": "repeating_text_output"
+      }
     }
   ]
 }
