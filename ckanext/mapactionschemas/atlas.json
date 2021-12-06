@@ -228,6 +228,7 @@
             "label": "Number of pages",
             "help_text": "For multiple page products (eg atlases and powerpoint maps) this indicates the number of pages",
             "required": true,
+            "validators": "is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -249,6 +250,7 @@
             "label": "JPG file size",
             "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -270,6 +272,7 @@
             "label": "PDF file size",
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {

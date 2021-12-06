@@ -229,6 +229,7 @@
             "label": "JPG file size",
             "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -243,6 +244,7 @@
             "label": "PDF file size",
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
