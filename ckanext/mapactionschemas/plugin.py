@@ -4,7 +4,7 @@ import pylons.config as config
 
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
+from ckan.logic import get_validator
 import ckan.lib.navl.dictization_functions as df
 
 
@@ -12,8 +12,13 @@ from ckanext.mapactionschemas import helpers
 from ckanext.mapactionschemas.constants.aplha_3_country_codes import ISO3_CODES
 from ckanext.mapactionschemas.constants.iso_639_1 import LANGUAGES_ISO2
 
+from ckanext.scheming.validation import scheming_validator
+
 Invalid = df.Invalid
 
+ignore_missing = get_validator('ignore_missing')
+ignore_empty = get_validator('ignore_empty')
+not_empty = get_validator('not_empty')
 
 def group_name():
     '''Allows renaming of "Group"
@@ -64,7 +69,8 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
             'ymax': ymax,
             'ymin': ymin,
             'country_iso3': country_iso3,
-            'language_iso2': language_iso2
+            'language_iso2': language_iso2,
+            'scheming_required_modified': scheming_required_modified
         }
 
 
@@ -128,3 +134,12 @@ def language_iso2(value):
     if value.lower() in LANGUAGES_ISO2:
         return value
     raise Invalid(u'Language code has to be ISO639-1')
+
+@scheming_validator
+def scheming_required_modified(field, schema):
+    """
+    not_empty if field['required'] else ignore_empty
+    """
+    if field.get('required'):
+        return not_empty
+    return ignore_empty

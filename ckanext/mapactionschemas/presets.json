@@ -88,25 +88,25 @@
     {
       "preset_name": "xmax",
       "values": {
-        "validators": "valid_float xmax"
+        "validators": "scheming_required_modified valid_float xmax"
       }
     },
     {
       "preset_name": "xmin",
       "values": {
-        "validators": "valid_float xmin"
+        "validators": "scheming_required_modified valid_float xmin"
       }
     },
     {
       "preset_name": "ymax",
       "values": {
-        "validators": "valid_float ymax"
+        "validators": "scheming_required_modified valid_float ymax"
       }
     },
     {
       "preset_name": "ymin",
       "values": {
-        "validators": "valid_float ymin"
+        "validators": "scheming_required_modified valid_float ymin"
       }
     }
   ]
