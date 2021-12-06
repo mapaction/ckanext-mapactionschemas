@@ -46,13 +46,6 @@
             "form_snippet": "markdown.html"
         },
         {
-            "field_name": "summary",
-            "label": "Summary",
-            "help_text": "Summary or abstract describing the map. This is normally extracted from a text box on the map itself.",
-            "required": false,
-            "form_snippet": "markdown.html"
-        },
-        {
             "field_name": "name",
             "label": "Name",
             "help_text": "The version specific productID. \n\nThis version of the product can be access via the Web UI as:\nhttps://maps.mapaction.org/dataset/<productID>\nand via the API as:\nhttps://maps.mapaction.org/api/3/action/package_show?id=<productID>",
