@@ -49,7 +49,7 @@
     {
       "field_name": "product_themes",
       "label": "Themes",
-      "preset": "tag_list",
+      "preset": "product_themes",
       "form_placeholder": "eg. economy, mental health, government",
       "vocabulary": "product_themes",
       "choices_helper": "mapactionschemas_vocabulary_choices"
