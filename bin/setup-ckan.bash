@@ -46,7 +46,6 @@ paster config-tool -s app:main test-core.ini 'ckan.storage_path=/var/lib/ckan_te
 cd -
 
 echo "Installing ckanext-mapactionschemas and its requirements..."
-pip install -r requirements.txt
 python setup.py develop
 pip install -r dev-requirements.txt
 
