@@ -40,13 +40,6 @@
             "form_snippet": "markdown.html"
         },
         {
-            "field_name": "summary",
-            "label": "Summary",
-            "help_text": "Summary or abstract describing the map. This is normally extracted from a text box on the map itself.",
-            "required": false,
-            "form_snippet": "markdown.html"
-        },
-        {
             "field_name": "name",
             "label": "Name",
             "help_text": "The version specific productID. \n\nThis version of the product can be access via the Web UI as:\nhttps://maps.mapaction.org/dataset/<productID>\nand via the API as:\nhttps://maps.mapaction.org/api/3/action/package_show?id=<productID>",
@@ -73,11 +66,12 @@
             "label": "Principal Country (ISO3)",
             "help_text": "The ISO3 country for the principal disaster affected country",
             "required": true,
+            "validators": "country_iso3",
             "form_snippet": "text.html"
         },
         {
             "field_name": "country-iso3",
-            "preset": "repeating_text",
+            "preset": "contry_iso3",
             "label": "Country (ISO3)",
             "help_text": "The ISO3 country code for an additional affected country",
             "required": false,
@@ -88,6 +82,7 @@
             "label": "Language (ISO2)",
             "help_text": "ISO 639-1 two letter code for the lanuage used in the product (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)",
             "required": true,
+            "validators": "scheming_required_modified language_iso2",
             "form_snippet": "text.html"
         },
         {
@@ -206,7 +201,7 @@
             "label": "Data update frequency",
             "help_text": "A verbal description of the expected frequency by which the underlying data is updated.",
             "required": false,
-            "form_snippet": "text.html"
+            "preset": "data_update_frequency"
         },
         {
             "field_name": "methodology",
@@ -234,6 +229,7 @@
             "label": "JPG file size",
             "help_text": "Size in bytes, of the JPEG file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -248,6 +244,7 @@
             "label": "PDF file size",
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {

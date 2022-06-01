@@ -1,17 +1,25 @@
 # -*- coding: utf-8 -*-
+import json
 
 import pylons.config as config
 
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-
+from ckan.logic import get_validator
 import ckan.lib.navl.dictization_functions as df
 
 
 from ckanext.mapactionschemas import helpers
+from ckanext.mapactionschemas.constants.aplha_3_country_codes import ISO3_CODES
+from ckanext.mapactionschemas.constants.iso_639_1 import LANGUAGES_ISO2
+
+from ckanext.scheming.validation import scheming_validator
 
 Invalid = df.Invalid
 
+ignore_missing = get_validator('ignore_missing')
+ignore_empty = get_validator('ignore_empty')
+not_empty = get_validator('not_empty')
 
 def group_name():
     '''Allows renaming of "Group"
@@ -61,6 +69,10 @@ class MapactionschemasPlugin(plugins.SingletonPlugin):
             'xmin': xmin,
             'ymax': ymax,
             'ymin': ymin,
+            'country_iso3': country_iso3,
+            'country_iso3_list': country_iso3_list,
+            'language_iso2': language_iso2,
+            'scheming_required_modified': scheming_required_modified
         }
 
 
@@ -75,7 +87,7 @@ def valid_float(value):
     try:
         float_value = float(value)
     except ValueError:
-        print "Invalid float '%s'" % value
+        raise Invalid("Invalid float '%s'" % value)
     return float_value
 
 def xmax(key, flattened_data, errors, context):
@@ -114,3 +126,31 @@ def ymin(key, flattened_data, errors, context):
     if -90 <= value <= ymax:
         return value
     raise Invalid(u'-90 ≤ %s ≤ %s' % (value, ymax))
+
+def country_iso3(value):
+    if value in ISO3_CODES:
+        return value
+    raise Invalid(u'Country code has to be ISO3')
+
+
+def country_iso3_list(data):
+    values = json.loads(data)
+    for value in values:
+        if value not in ISO3_CODES:
+            raise Invalid(u'Country code has to be ISO3')
+    return json.dumps(values)
+
+
+def language_iso2(value):
+    if value.lower() in LANGUAGES_ISO2:
+        return value
+    raise Invalid(u'Language code has to be ISO639-1')
+
+@scheming_validator
+def scheming_required_modified(field, schema):
+    """
+    not_empty if field['required'] else ignore_empty
+    """
+    if field.get('required'):
+        return not_empty
+    return ignore_empty

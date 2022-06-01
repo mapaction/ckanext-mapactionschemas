@@ -1,5 +1,5 @@
 {
-    "about": "Powerpoint Map",
+    "about": "MapAction Test Dataproduct schema",
     "scheming_version": 1,
     "resource_fields": [
         {
@@ -68,7 +68,7 @@
             "form_snippet": "text.html"
         },
         {
-            "field_name": "principal-country-iso3",
+            "field_name": "principal_country_iso3",
             "label": "Principal Country (ISO3)",
             "help_text": "The ISO3 country for the principal disaster affected country",
             "required": true,
@@ -76,7 +76,7 @@
             "form_snippet": "text.html"
         },
         {
-            "field_name": "country-iso3",
+            "field_name": "country_iso3",
             "preset": "contry_iso3",
             "label": "Country (ISO3)",
             "help_text": "The ISO3 country code for an additional affected country",
@@ -84,10 +84,10 @@
             "form_blanks": 3
         },
         {
-            "field_name": "language-iso2",
+            "field_name": "language_iso2",
             "label": "Language (ISO2)",
             "help_text": "ISO 639-1 two letter code for the lanuage used in the product (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)",
-            "required": true,
+            "required": false,
             "validators": "scheming_required_modified language_iso2",
             "form_snippet": "text.html"
         },
@@ -198,7 +198,7 @@
             "field_name": "syndicate",
             "label": "Syndicate",
             "help_text": "Indicates whether or not a dataset should be syndicated to HDX",
-            "required": false,
+            "required": true,
             "form_snippet": "select.html",
             "preset": "syndicate"
         },
@@ -206,7 +206,7 @@
             "field_name": "data_update_frequency",
             "label": "Data update frequency",
             "help_text": "A verbal description of the expected frequency by which the underlying data is updated.",
-            "required": false,
+            "required": true,
             "preset": "data_update_frequency"
         },
         {
@@ -236,7 +236,6 @@
             "label": "Paper size",
             "help_text": "The papersize for which the map was optimised.",
             "required": false,
-            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -273,6 +272,7 @@
             "label": "PDF file size",
             "help_text": "Size in bytes, of the PDF file (if it exists). The accuracy of this value is not guaranteed. It is known to be incorrect in the case of atlases.",
             "required": false,
+            "validators": "scheming_required_modified is_positive_integer",
             "form_snippet": "text.html"
         },
         {
@@ -324,6 +324,6 @@
             "preset": "dataset_organization"
         }
     ],
-    "dataset_type": "powerpoint-map",
+    "dataset_type": "test_dataproduct",
     "about_url": "http://www.mapaction.org/"
 }
